@@ -4,4 +4,9 @@
        - name: get server hostname
          command: hostname
        - name: see the files in system
-         command: ls -la	
+         command: ls -la
+       - name: "FIX: Ubuntu 16.04 LTS doesn't come with certain modules, required by ansible"
+         raw: apt-get install python-minimal aptitude -y
+         become: true
+         become_user: root
+         become_method: sudo
