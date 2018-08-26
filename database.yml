@@ -4,3 +4,13 @@
   tasks:
      - name: install mysql-server
        apt: name=mysql-server state=present update_cache=yes
+
+     - name: Allow all access to tcp port 3306
+       ufw:
+         rule: allow
+         port: 3306
+         proto: tcp
+
+     - name: ensure mysql started
+       service: name=mysql state=started enabled=yes
+
