@@ -2,7 +2,7 @@
 - hosts: webserver
   become: true
   tasks:
-     - name: install apache2
+     - name: install web components
        apt: name={{item}} state=present update_cache=yes
        # will fire of foreach on withitems by passing item param to be installed
        with_items:
