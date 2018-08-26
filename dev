@@ -1,0 +1,13 @@
+
+#Grop host by groupname
+[loadbalancer]
+lb01 ansible_ssh_host="$slave_one_ansible"
+
+[webserver]
+app01 ansible_ssh_host="$slave_two_ansible"
+
+[database]
+db01 ansible_ssh_host="$slave_three_ansible"
+
+[controls]
+control ansible_connection=local
