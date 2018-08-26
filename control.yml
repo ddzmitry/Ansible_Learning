@@ -1,0 +1,10 @@
+---
+#Installing apps on control machine 
+ - hosts: controls
+   become: true
+   tasks:
+      - name: install needed tools 
+        apt: name={{item}} state=present update_cache=yes
+        with_items:
+         - curl
+         - htop

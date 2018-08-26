@@ -4,3 +4,14 @@
   tasks:
    - name: install nginx
      apt: name=nginx state=present update_cache=yes
+
+   - name: ensure nginx started
+     # will ask if it is running if not , then it will start it
+     service: name=nginx state=started enabled=yes
+
+   - name: Allow all access to tcp port 80
+     ufw:
+      rule: allow
+      port: 80
+      proto: tcp
+     
