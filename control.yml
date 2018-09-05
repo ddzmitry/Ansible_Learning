@@ -8,3 +8,4 @@
         with_items:
          - curl
          - htop
+         - python-httplib2
